@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="ajio.css">
+    <title>Document</title>
+    
+</head>
+<body>
+    <div id="main-sign">
+    <div id="sign-div">
+        <div id="button-div">
+           <a href="login.html"><p id="back-btn"> Back </p></a>
+            <button id="sign-button">&times;</button>
+        </div>
+        
+        <div>
+        <div>
+            <h1 id="welcm">Welcome to AJIO</h1>
+            
+        </div>
+        <div id="main-logo-div">
+            <div><p id="join">Please set up your account</p>
+            <p id="otp">7249840809</p>
+            <p id="para">OTP will be sent to your number for verification</p>
+        </div>
+            </div>
+        </div>
+        <div id="checkb">
+            <p id="p">Gender:</p>
+        <label class="container">Female
+            <input type="checkbox" checked="checked">
+            <span class="checkmark"></span>
+            
+          </label>
+          
+          <label class="container">Male
+            <input type="checkbox" checked="checked">
+            <span class="checkmark"></span>
+          </label>
+        </div>
+        <div id="main-info">
+            <input id="search" type="text" placeholder="Name">
+            <input id="search" type="text" placeholder="Email">
+            <input id="search" type="text" placeholder="Password">
+        </div>
+        <div>
+            <button onclick="gotoOtp()" id="continue-btn">SEND OTP</button>
+
+        </div>
+   
+    </div>
+</div>
+</body>
+</html>
+
+<script>
+    function gotoOtp(){
+
+        
+        setTimeout(() => {
+            alert ("OTP sent to your mobile number");
+
+
+            window.location.href="otp_new.html";
+        },1000);
+           
+        
+       
+    }
+ 
+
+    let num = JSON.parse(localStorage.getItem("num_local"));
+    
+    console.log(num);
+
+
+    num.forEach(function(el){
+
+        console.log(el);
+        console.log(el.number);
+
+        let p_tag = document.getElementById("otp");
+    p_tag.innerText = el.number ; 
+    })
+
+    
+</script>
